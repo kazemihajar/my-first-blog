@@ -34,6 +34,22 @@
         <title>Django Girls blog</title>
     </head>
     <body>
+        <div>{{ posts }}</div>
+        <div>
+            {% for post in posts %}
+                {{ post }}
+            {% endfor %}
+        </div>
+        <div>
+            {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+            {% endfor %}   
+        </div>
+
         <div>
             <h1><a href="/">Django Girls Blog-دختران جنگو</a></h1>
         </div>
@@ -50,4 +66,5 @@
             <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
         </div>
     </body>
+
 </html>
